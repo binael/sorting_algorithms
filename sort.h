@@ -33,6 +33,8 @@ void heap_sort(int *array, size_t size);
 void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
+int partition(int *array, int first, int last, size_t n);
+void sorted(int *array, int first, int last, size_t n);
 /* void sort_deck(deck_node_t **deck); */
 
 #endif /* End of sort header */
