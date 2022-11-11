@@ -62,9 +62,7 @@ int partition(int *array, int first, int last, size_t n)
 	while (j < last && first >= 0)
 	{
 		if (array[i] <= array[last])
-		{
 			i++, j++;
-		}
 		else if (array[j] < array[last])
 		{
 			temp = array[i];
@@ -74,16 +72,15 @@ int partition(int *array, int first, int last, size_t n)
 			j++, i++;
 		}
 		else
-		{
 			j++;
-		}
 	}
 	if (array[j] <= array[i])
 	{
 		temp = array[i];
 		array[i] = array[j];
 		array[j] = temp;
-		print_array(array, n);
+		if (array[i] != array[j])
+			print_array(array, n);
 	}
 	else
 	{
