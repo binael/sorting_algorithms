@@ -37,6 +37,7 @@ int partition(int *array, int first, int last, size_t n);
 void sorted(int *array, int first, int last, size_t n);
 void interval_insertion(int *array, int size, int interval);
 size_t power(size_t number, size_t power);
+int compare_swap(listint_t **list, listint_t **node1, listint_t **node2);
 /* void sort_deck(deck_node_t **deck); */
 
 #endif /* End of sort header */
