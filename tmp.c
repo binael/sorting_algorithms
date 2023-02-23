@@ -50,46 +50,45 @@ void print_list(const listint_t *list)
 	printf("\n");
 }
 
-size_t partition(int *array, int first, int last, size_t size)
+void clockwise(int *array, size_t size)
 {
-	int i, position = first;
-	int temp;
+	int temp1;
+	int temp2;
+	size_t i;
 
-	for (i = first; i <= last; i++)
+	if (array == NULL)
+		return;
+	
+	if (size <= 1)
+		return;
+
+	temp1 = array[0];
+	for (i = 1; i < size; i++)
 	{
-		if (array[last] >= array[i])
+		temp2 = array[i];
+		array[i] = temp1;
+		temp1 = temp2;
+	}
+}
+
+int find_max(int *array, size_t size)
+{
+	size_t i;
+	int maximum;
+
+	if (size < 1)
+		return (-1);
+	
+	maximum = array[0];
+
+	for (i = 1; i < size; i++)
+	{
+		if (array[i] > maximum)
 		{
-			if (i != position)
-			{
-				temp = array[position];
-				array[position] = array[i];
-				array[i] = temp;
-				print_array(array, size);
-			}
-			position++;
+			maximum = array[i];
 		}
 	}
-	return (position - 1);
-}
-void sorter(int *array, int first, int last, size_t size)
-{
-	int position;
-
-	if (first >= last || first < 0)
-	{
-		return;
-	}
-
-	position = partition(array, first, last, size);
-
-	sorter(array, first, position - 1, size);
-	sorter(array, position + 1, last, size);
-}
-
-
-void quick_sort(int *array, size_t size)
-{
-	sorter(array, 0, (int)size - 1, size);
+	return (maximum);
 }
 
 int main(void)
@@ -99,8 +98,9 @@ int main(void)
 
     print_array(array, n);
     printf("\n");
-    quick_sort(array, n);
+    clockwise(array, n);
     printf("\n");
     print_array(array, n);
+	printf("%i\n", find_max(array, n));
     return (0);
 }
