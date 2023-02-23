@@ -48,7 +48,7 @@ void arraycpy(int *array, int *new_arr, size_t size)
 
 
 /**
- * set_array - function sets an integer value to all indexed of 
+ * set_array - function sets an integer value to all indexed of
  * an array
  * @array: the array to set
  * @size: size of the array
