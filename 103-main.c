@@ -14,7 +14,7 @@ int main(void)
 
     print_array(array, n);
     printf("\n");
-    counting_sort(array, n);
+    merge_sort(array, n);
     printf("\n");
     print_array(array, n);
     return (0);

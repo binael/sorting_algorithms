@@ -28,12 +28,19 @@ void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 
+/* Functions in Counting Sort */
 void counting_sort(int *array, size_t size);
 int find_max(int *array, size_t size);
 void arraycpy(int *array, int *new_arr, size_t size);
 void set_array(int *array, size_t size, int value);
 
+/* Functions in merge sort */
 void merge_sort(int *array, size_t size);
+void m_copyarr(int *source, int *dest, size_t left, size_t right);
+void m_print(int *ar, int *tmp, size_t l, size_t m, size_t r);
+void merger(int *ar, int *tmp, size_t l, size_t m, size_t r);
+void m_sort(int *ar, int *tmp, size_t l, size_t r);
+
 void heap_sort(int *array, size_t size);
 void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
